@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="https://setsuna0130.github.io">
   <title>安卓0基础(1) | Setsuna&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安卓零基础入门第一天安装环境Android studio 略">
+  <meta name="description" content="安卓零基础入门第一天开发环境Android studio 略 活动用途用于跟用户交互，一个应用可以包括一个或多个活动 基本用法创建活动 在app&#x2F;src&#x2F;main&#x2F;java&#x2F; com…. 目录下创建活动  创建并加载布局 在app&#x2F;src&#x2F;main&#x2F;res目录下新建layout文件夹存放布局文件 在layout文件夹下新建 layout resource file 切换到 Text 选项卡 编写布">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓0基础(1)">
 <meta property="og:url" content="https://setsuna0130.github.io/2020/04/12/%E5%AE%89%E5%8D%930%E5%9F%BA%E7%A1%80-1/index.html">
 <meta property="og:site_name" content="Setsuna&#39;s blog">
-<meta property="og:description" content="安卓零基础入门第一天安装环境Android studio 略">
+<meta property="og:description" content="安卓零基础入门第一天开发环境Android studio 略 活动用途用于跟用户交互，一个应用可以包括一个或多个活动 基本用法创建活动 在app&#x2F;src&#x2F;main&#x2F;java&#x2F; com…. 目录下创建活动  创建并加载布局 在app&#x2F;src&#x2F;main&#x2F;res目录下新建layout文件夹存放布局文件 在layout文件夹下新建 layout resource file 切换到 Text 选项卡 编写布">
 <meta property="og:locale" content="cn">
 <meta property="article:published_time" content="2020-04-12T14:58:34.000Z">
-<meta property="article:modified_time" content="2020-04-12T15:00:49.302Z">
+<meta property="article:modified_time" content="2020-04-13T06:12:14.829Z">
 <meta property="article:author" content="setsuna">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Setsuna&#39;s blog" type="application/atom+xml">
@@ -174,7 +175,81 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安卓零基础入门第一天"><a href="#安卓零基础入门第一天" class="headerlink" title="安卓零基础入门第一天"></a>安卓零基础入门第一天</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>Android studio 略</p>
+        <h1 id="安卓零基础入门第一天"><a href="#安卓零基础入门第一天" class="headerlink" title="安卓零基础入门第一天"></a>安卓零基础入门第一天</h1><h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>Android studio 略</p>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><p>用于跟用户交互，一个应用可以包括一个或多个活动</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="创建活动"><a href="#创建活动" class="headerlink" title="创建活动"></a>创建活动</h4><ul>
+<li>在app/src/main/java/ com…. 目录下创建活动</li>
+</ul>
+<h4 id="创建并加载布局"><a href="#创建并加载布局" class="headerlink" title="创建并加载布局"></a>创建并加载布局</h4><ul>
+<li>在app/src/main/res目录下新建layout文件夹存放布局文件</li>
+<li>在layout文件夹下新建 layout resource file</li>
+<li>切换到 Text 选项卡</li>
+<li>编写布局文件</li>
+</ul>
+<h4 id="注册活动"><a href="#注册活动" class="headerlink" title="注册活动"></a>注册活动</h4><ul>
+<li>所有的活动都要在 AndroidManifest.xml 中进行注册才能生效，</li>
+</ul>
+<h4 id="在活动中使用toast-（弹窗）"><a href="#在活动中使用toast-（弹窗）" class="headerlink" title="在活动中使用toast （弹窗）"></a>在活动中使用toast （弹窗）</h4><ul>
+<li>设置监听事件</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Button button1 = (Button) findViewById(R.id.button_1);  </span><br><span class="line"><span class="comment">//1. 声明button1对象 与布局文件中Button 关联</span></span><br><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;  </span><br><span class="line"><span class="comment">//2. 设置监听器，监听事件</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">    	Toast.makeText(FirstActivity.<span class="keyword">this</span>, <span class="string">"You clicked Button 1"</span>,Toast.LENGTH_SHORT).show();     </span><br><span class="line"><span class="comment">//3.调用makeText(Context context, int resID, int duration)方法                                </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PS：笔者发现在小米手机上直接调用 toast 方法弹窗会出现应用名，虽然不影响使用但是还是很碍眼改用如下方法即可解决问题 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Button button1 = (Button) findViewById(R.id.button_1);</span><br><span class="line"><span class="comment">//1. 声明button1对象 与布局文件中Button 关联。通过 findViewById()方法获取到在布局文件中定义的元素，</span></span><br><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line"><span class="comment">//2. 设置监听器，监听事件</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">    Toast toast = Toast.makeText(FirstActivity.<span class="keyword">this</span>,<span class="keyword">null</span>,Toast.LENGTH_SHORT);</span><br><span class="line"><span class="comment">// 先用null设置toast 为空，在调用 setText方法设置内容</span></span><br><span class="line">    toast.setText(<span class="string">"Hello world!"</span>);</span><br><span class="line">    toast.show();  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="在活动中使用menu"><a href="#在活动中使用menu" class="headerlink" title="在活动中使用menu"></a>在活动中使用menu</h4><ul>
+<li><p>在app/src/main/res目录下新建menu文件夹存放布局文件</p>
+</li>
+<li><p>在menu 文件夹下新建 名称为 main 的menu resource file</p>
+</li>
+<li><p>编写</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> &gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">item</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/add_item"</span> <span class="attr">android:title</span>=<span class="string">"Add"</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">item</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/remove_item"</span> <span class="attr">android:title</span>=<span class="string">"Remove"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在布局界面对应的 java 逻辑文件中重写 onCreateOptionsMenu()方法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu)</span> </span>&#123;</span><br><span class="line">    getMenuInflater().inflate(R.menu.main, menu);</span><br><span class="line">    <span class="comment">//通过 getMenuInflater()方法能够得到 MenuInflater 对象，再调用它的 inflate()方法就可以给当前活动创建菜单</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure>
+
+<p>​    详细参照官方文档<a href="https://developer.android.com/guide/topics/ui/menus" target="_blank" rel="noopener">链接</a></p>
+<ul>
+<li>在布局界面对应的 java 逻辑文件中重写 onOptionsItemSelected()方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line"><span class="keyword">switch</span> (item.getItemId()) &#123;</span><br><span class="line"><span class="keyword">case</span> R.id.add_item:</span><br><span class="line">Toast.makeText(<span class="keyword">this</span>, <span class="string">"You clicked Add"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> R.id.remove_item:</span><br><span class="line">Toast.makeText(<span class="keyword">this</span>, <span class="string">"You clicked Remove"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="销毁一个活动"><a href="#销毁一个活动" class="headerlink" title="销毁一个活动"></a>销毁一个活动</h4><ul>
+<li>类似于返回键</li>
+<li>在监听器中调用finish()方法即可</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        finish();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Intent-切换活动"><a href="#使用Intent-切换活动" class="headerlink" title="使用Intent 切换活动"></a>使用Intent 切换活动</h3><h4 id="显式Intent"><a href="#显式Intent" class="headerlink" title="显式Intent"></a>显式Intent</h4><ul>
+<li>创建第二个活动，默认会创建第二个布局页面</li>
+<li>在AndroidManifest.xml 中进行注册。</li>
+<li>在监听器中调用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">    	Intend intent = <span class="keyword">new</span> Intent(FirstActivity.<span class="keyword">this</span>,SecondActivity<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="隐式Intent"><a href="#隐式Intent" class="headerlink" title="隐式Intent"></a>隐式Intent</h4><ul>
+<li>在AndroidManifest.xml中编辑</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".Secondactivity"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"com.example.activitytest.ACTION_START"</span> /&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"com.example.activitytest.MY_CATEGORY"</span> /&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在第一个布局对应的逻辑文件下设置监听器后调用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">	    Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.activitytest.ACTION_START"</span>);</span><br><span class="line">        <span class="comment">//调用action名为 ACTION_START的事件</span></span><br><span class="line">        <span class="comment">//也可以添加条件 </span></span><br><span class="line">        <span class="comment">//intent.addCategory("com.example.activitytest.MY_CATEGORY")</span></span><br><span class="line">        <span class="comment">//调用action名为 ACTION_START同时category为MY_CATEGORY的事件</span></span><br><span class="line">         startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="调用浏览器"><a href="#调用浏览器" class="headerlink" title="调用浏览器"></a>调用浏览器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">	Intent intent=<span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</span><br><span class="line">	intent.setData(Uri.parse(<span class="string">"https://setsuna0130.github.io/"</span>));</span><br><span class="line">	startActivity(intent);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="调用拨号"><a href="#调用拨号" class="headerlink" title="调用拨号"></a>调用拨号</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">button1.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">	Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_DIAL);</span><br><span class="line">    intent.setData(Uri.parse(<span class="string">"tel:10086"</span> ));</span><br><span class="line">	startActivity(intent);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="更多调用"><a href="#更多调用" class="headerlink" title="更多调用"></a>更多调用</h4><p><a href="https://developer.android.com/guide/components/intents-common" target="_blank" rel="noopener">官方文档</a></p>
 
       
 
@@ -204,6 +279,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -384,6 +470,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
