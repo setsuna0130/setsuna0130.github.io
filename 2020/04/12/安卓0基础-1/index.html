@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://setsuna0130.github.io">
   <title>安卓0基础(1) | Setsuna&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安卓零基础入门第一天开发环境Android studio 略 活动用途用于跟用户交互，一个应用可以包括一个或多个活动 基本用法创建活动 在app&#x2F;src&#x2F;main&#x2F;java&#x2F; com…. 目录下创建活动  创建并加载布局 在app&#x2F;src&#x2F;main&#x2F;res目录下新建layout文件夹存放布局文件 在layout文件夹下新建 layout resource file 切换到 Text 选项卡 编写布">
+  <meta name="description" content="安卓零基础入门第一天开发环境Android studio 略 活动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓0基础(1)">
 <meta property="og:url" content="https://setsuna0130.github.io/2020/04/12/%E5%AE%89%E5%8D%930%E5%9F%BA%E7%A1%80-1/index.html">
 <meta property="og:site_name" content="Setsuna&#39;s blog">
-<meta property="og:description" content="安卓零基础入门第一天开发环境Android studio 略 活动用途用于跟用户交互，一个应用可以包括一个或多个活动 基本用法创建活动 在app&#x2F;src&#x2F;main&#x2F;java&#x2F; com…. 目录下创建活动  创建并加载布局 在app&#x2F;src&#x2F;main&#x2F;res目录下新建layout文件夹存放布局文件 在layout文件夹下新建 layout resource file 切换到 Text 选项卡 编写布">
+<meta property="og:description" content="安卓零基础入门第一天开发环境Android studio 略 活动">
 <meta property="og:locale" content="cn">
 <meta property="article:published_time" content="2020-04-12T14:58:34.000Z">
-<meta property="article:modified_time" content="2020-04-13T06:12:14.829Z">
+<meta property="article:modified_time" content="2020-04-15T02:09:05.781Z">
 <meta property="article:author" content="setsuna">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -176,7 +176,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安卓零基础入门第一天"><a href="#安卓零基础入门第一天" class="headerlink" title="安卓零基础入门第一天"></a>安卓零基础入门第一天</h1><h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>Android studio 略</p>
-<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><p>用于跟用户交互，一个应用可以包括一个或多个活动</p>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><a id="more"></a>
+
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><p>用于跟用户交互，一个应用可以包括一个或多个活动</p>
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="创建活动"><a href="#创建活动" class="headerlink" title="创建活动"></a>创建活动</h4><ul>
 <li>在app/src/main/java/ com…. 目录下创建活动</li>
 </ul>
@@ -205,13 +207,17 @@
 <li><p>在menu 文件夹下新建 名称为 main 的menu resource file</p>
 </li>
 <li><p>编写</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> &gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">item</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/add_item"</span> <span class="attr">android:title</span>=<span class="string">"Add"</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">item</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/remove_item"</span> <span class="attr">android:title</span>=<span class="string">"Remove"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在布局界面对应的 java 逻辑文件中重写 onCreateOptionsMenu()方法</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" > 
+<item
+android:id="@+id/add_item" android:title="Add"/>
+<item
+android:id="@+id/remove_item" android:title="Remove"/>
+</menu>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 在布局界面对应的 java 逻辑文件中重写 onCreateOptionsMenu()方法</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">​&#96;&#96;&#96;java</span><br><span class="line">public boolean onCreateOptionsMenu(Menu menu) &#123;</span><br><span class="line">    getMenuInflater().inflate(R.menu.main, menu);</span><br><span class="line">    &#x2F;&#x2F;通过 getMenuInflater()方法能够得到 MenuInflater 对象，再调用它的 inflate()方法就可以给当前活动创建菜单</span><br><span class="line">    return true;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu)</span> </span>&#123;</span><br><span class="line">    getMenuInflater().inflate(R.menu.main, menu);</span><br><span class="line">    <span class="comment">//通过 getMenuInflater()方法能够得到 MenuInflater 对象，再调用它的 inflate()方法就可以给当前活动创建菜单</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure>
-
 <p>​    详细参照官方文档<a href="https://developer.android.com/guide/topics/ui/menus" target="_blank" rel="noopener">链接</a></p>
 <ul>
 <li>在布局界面对应的 java 逻辑文件中重写 onOptionsItemSelected()方法</li>
@@ -429,6 +435,14 @@
     </div>
   </div>
 </footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+    总访问量: <span id="busuanzi_value_site_pv"></span>
+</span>
+<span id="busuanzi_container_site_uv">
+    总访客: <span id="busuanzi_value_site_uv"></span>
+</span>
+
     </div>
     <script>
 	var yiliaConfig = {
